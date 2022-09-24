@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script
+src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js">
+</script>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="style.css">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="main-container">
+        <div class="side-menu">
+            <div class="title"><div class="logo">W</div><div><h2>Waste Bank</h2></div></div>
+            <div class="menu-items">
+                <div><i class="material-icons active">home</i><h4 class="active"> Dashboard</h4></div>
+            <div><i class="material-icons">person</i><h4> Customer</h4></div>
+            <div><i class="material-icons">menu</i><h4> Category</h4></div>
+            <div><i class="material-icons">shop</i><h4> Trasaction</h4></div>
+            <div><i class="material-icons">location_on</i><h4> Pick-up</h4></div>
+            <div><i class="material-icons">domain</i><h4> Stock</h4></div>
+            <div><i class="material-icons">attach_money</i><h4> Financial</h4></div>
+            <div><i class="material-icons">receipt</i><h4> Report</h4></div>
+            </div>
+            <div class="divider"></div>
+            <div class="bottom-nav"><div class="logo"><i class="material-icons">nfc</i></div><div class="nav-text"><p>Welcome</p><h4>WB berseinar</h4></div><div><i class="material-icons">keyboard_arrow_down</i></div></div>
+        </div>
+        <div class="main-page">
+            <div class="title-1"><h3>Overview</h3></div>
+            <div class="two"><form>
+                <input type="text" id="fname" name="fname" placeholder="Search waste in....">
+              </form></div>
+            <div class="card">
+                <div class="card-content"><div class="logo-2"><i class="material-icons">person</i></div><div class="card-text"><p>Customer</p><h4>1,300</h4></div><div></div></div>
+            </div>
+            <div class="card">
+                <div class="card-content"><div class="logo-2"><i class="material-icons" id="sec">person</i></div><div class="card-text"><p>Employees</p><h4>42</h4></div><div></div></div>
+            </div>
+            <div class="card">
+                <div class="card-content"><div class="logo-2"><i class="material-icons" id="third">person</i></div><div class="card-text"><p>Request</p><h4>128</h4></div><div></div></div>
+            </div>
+            <div class="two pie">
+                <div class="legend">Customer based Region</div>
+                <div class="chart">
+                    <canvas class="piechart" id="mypieChart" style="width:100%;height: 190px;"></canvas>
+
+                        <script>
+                        var xValues = ["Italy", "France", "Spain", "USA", "Argentina"];
+                        var yValues = [55, 49, 44, 24, 15];
+                        var barColors = [
+                        "#7033F3",
+                        "#b91d47",
+                        "#FC8F16",
+                        "#e8c3b9",
+                        "#FA20E6"
+                        ];
+                        var borderbarColors = [
+                        "#7033F3",
+                        "#b91d47",
+                        "#FC8F16",
+                        "#e8c3b9",
+                        "#FA20E6"
+                        ];
+
+                        new Chart("mypieChart", {
+                        type: "doughnut",
+                        data: {
+                            labels: xValues,
+                            datasets: [{
+                            backgroundColor: barColors,
+                            data: yValues,
+                            borderColor:borderbarColors
+                            }]
+                        },
+                        options: {
+                            legend:{
+                                position:'right'
+                            },
+                            title: {
+                            display: false,
+                            text: "Customer Based Region",
+                            align:'left'
+                            }
+                        }
+                        
+                        });
+                        </script>
+                </div>
+            </div>
+            <div class="side-info">
+                <div class="card-text"><p>Total Category Waste</p><h4>20</h4></div>
+                <div class="card-text"><p>Total waste in</p><h4>564 kg</h4></div>
+                <div class="card-text"><p>Total waste out</p><h4>1205</h4></div>
+            </div>
+            <div class="three">
+                <canvas id="myChart" style="width:100%; height: 100%;"></canvas>
+
+                <script>
+                var yValues = [1000,200,300,400,500,600,700];
+                var xValues = ["Sunday", "Monday", "Tuesday", "Wednasday", "Thursday","Friday","Saturday"];
+
+                new Chart("myChart", {
+                type: "line",
+                data: {
+                    labels: xValues,
+                    datasets: [{ 
+                    data: [860,1140,1060,1060,1070,1110,1330],
+                    borderColor: "#7033F3",//112	51	243
+                    backgroundColor : "rgba(112,51,243,0.1)",
+                    fill: true
+                    }, { 
+                    data: [1600,1700,1700,1900,2000,2700,4000],
+                    borderColor: "#FC8F16",
+                    backgroundColor : "rgba(252,143,22,0.1)",//252	143	22
+                    fill: true
+                    }, { 
+                    data: [300,700,2000,5000,6000,4000,2000],
+                    borderColor: "#FA20E6",
+                    backgroundColor : "rgba(250,32,230,0.1)",
+                    fill: true
+                    }]
+                },
+                options: {
+                    legend: {display: false}
+                }
+                });
+                </script>
+            </div>
+        </div>
+        <div class="side-profile">
+            <div class="profile">
+                <i class="material-icons">notifications</i>
+                <h4>Ceptari Tyas</h4>
+                <div class="logo-2"><i class="material-icons">person</i></div>
+            </div>
+            <div class="credit-card">
+                <img src="q.jpg" alt="">
+            </div>
+            <div class="title-3">
+                <h4>Last Trasaction</h4>
+                <p>See all</p>
+            </div>
+            <div class="last-trasaction">
+                <div class="leading">
+                    <div class="logo-3"><i class="material-icons">arrow_upward</i></div>
+                    <div class="title-leading">
+                        <h4>Deposit Waste</h4>
+                        <p>Hotal garden</p>
+                    </div>
+                    
+                </div>
+                <div class="trailing">
+                    <div class="title-trailing">
+                        <h4>$291</h4>
+                        <p>13 jan 2021</p>
+                    </div>
+                </div>
+            </div>
+            <div class="last-trasaction">
+                <div class="leading">
+                    <div class="logo-3 credit"><i class="material-icons">arrow_downward</i></div>
+                    <div class="title-leading">
+                        <h4>Credit Waste</h4>
+                        <p>Hotal garden</p>
+                    </div>
+                    
+                </div>
+                <div class="trailing">
+                    <div class="title-trailing">
+                        <h4>$123</h4>
+                        <p>9 fer 2021</p>
+                    </div>
+                </div>
+            </div>
+            <div class="last-trasaction">
+                <div class="leading">
+                    <div class="logo-3"><i class="material-icons">arrow_upward</i></div>
+                    <div class="title-leading">
+                        <h4>Deposit Waste</h4>
+                        <p>Hotal garden</p>
+                    </div>
+                    
+                </div>
+                <div class="trailing">
+                    <div class="title-trailing">
+                        <h4>$517</h4>
+                        <p>3 mar 2021</p>
+                    </div>
+                </div>
+            </div>
+            <div class="last-trasaction">
+                <div class="leading">
+                    <div class="logo-3 credit"><i class="material-icons">arrow_downward</i></div>
+                    <div class="title-leading">
+                        <h4>Credit Waste</h4>
+                        <p>Hotal garden</p>
+                    </div>
+                    
+                </div>
+                <div class="trailing">
+                    <div class="title-trailing">
+                        <h4>$123</h4>
+                        <p>4 mar 2021</p>
+                    </div>
+                </div>
+            </div>
+            <div class="last-trasaction">
+                <div class="leading">
+                    <div class="logo-3"><i class="material-icons">arrow_upward</i></div>
+                    <div class="title-leading">
+                        <h4>Deposit Waste</h4>
+                        <p>Hotal garden</p>
+                    </div>
+                    
+                </div>
+                <div class="trailing">
+                    <div class="title-trailing">
+                        <h4>$89</h4>
+                        <p>13 apr 2021</p>
+                    </div>
+                </div>
+            </div>
+            <div class="last-trasaction">
+                <div class="leading">
+                    <div class="logo-3 credit"><i class="material-icons">arrow_downward</i></div>
+                    <div class="title-leading">
+                        <h4>Credit Waste</h4>
+                        <p>Hotal garden</p>
+                    </div>
+                    
+                </div>
+                <div class="trailing">
+                    <div class="title-trailing">
+                        <h4>$291</h4>
+                        <p>13 jul 2021</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
